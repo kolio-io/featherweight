@@ -44,6 +44,9 @@ def current_user():
         "extra_field_ignored_by_model": "This field is ignored by the response model",
     }
 
+@app.get("test")
+def get_test_data():
+    return {"name": "Sokol"}
 
 @app.get("/cached", response_model=UserResponse)
 @cache(expire=30)  # cache for 30 seconds
